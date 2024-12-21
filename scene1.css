@@ -39,7 +39,7 @@
     /* Change to 2 columns */
     gap: 3px;
     margin: 0.5rem 0;
-    max-height: 50vh;
+    max-height: 45vh;
     overflow-y: auto;
 }
 
@@ -139,7 +139,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 1rem 0;
-    margin-top: auto;
+    margin-top: 0px;
 }
 
 /* Add these styles to your existing scene1.css */
@@ -269,7 +269,7 @@
     .path-options {
         grid-template-columns: 1fr;
         /* Single column on mobile */
-        max-height: 60vh;
+        max-height: 45vh;
         gap: 0.6rem;
     }
 
@@ -298,7 +298,7 @@
     }
 
     .navigation-buttons .quest-btn {
-        padding: 0.8em 1.5em;
+        padding: 10px 1.5em;
         /* Reduce padding */
         font-size: 16px;
         /* Smaller font */
@@ -438,7 +438,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
     margin: 0.5rem 0;
-    max-height: 50vh;
+    max-height: 45vh;
     overflow-y: auto;
     padding-right: 10px;
 }
@@ -551,7 +551,7 @@
 @media (max-width: 768px) {
     .vault-options {
         grid-template-columns: 1fr;
-        max-height: 50vh;
+        max-height: 45vh;
         gap: 0.6rem;
     }
 
@@ -672,7 +672,7 @@
     padding: 1rem;
     max-width: 600px;
     margin: 20px auto;
-    height: 50vh;
+    height: 45vh;
     overflow-y: auto;
 }
 
@@ -953,3 +953,25 @@
     font-size: 20px;
 }
 
+#final {
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+#final h2.floating {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+#final p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+ 
