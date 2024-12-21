@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Adventurer's Quest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="scene1.css">
+  
+
+
+</head>
+<body>
+    <div class="container" style="margin:0; padding:0;">
+        <form id="surveyForm" onsubmit="handleSubmit(event)">
+           
+        <div class="scene active" id="welcome">
+            <div class="welcome-content">
+                <img src="Logo-resize.png" alt="Food Adventurer's Quest Logo" class="logo floating">
+                
+                <!-- Add this new section -->
+                <div class="problem-statement">
+                    <h2>Do you often face these problems?</h2>
+                    <div class="image-container">
+
+                    <img src="Thinking.svg" alt="Common Food Decision Problems" class="eaters-questions rise-up">
+                    </div>
+                </div>
+                
+                <button type="button" class="quest-btn" onclick="nextScene('welcome', 'scene1')">
+                    <span class="text">Begin to explore ！</span>
+                </button>
+
+            </div>
+        </div>
+
+            <!-- Scene 1: Mystic's Greeting -->
+            <div class="scene-one hidden" id="scene1">
+                <div class="wave-overlay"><img src="wave.gif" alt="Wave"></div>
+
+                <div class="scene-content">
+                    <h2 class="scene-title floating">The Mystic's Greeting</h2>
+                    <p class="prompt">"Good day, Eaters! Tell me, how do you feel as you begin this quest?"</p>
+                    
+                    <div class="path-options">
+                        <label class="path-card rise-up">
+                            <input type="radio" name="user_mood" value="jubilant">
+                            <div class="path-content">
+                                <h3 class="path-title">The Jubilant Path</h3>
+                                <p class="path-description">cheerful, lively, lighthearted</p>
+                            </div>
+                        </label>
+            
+                        <label class="path-card rise-up">
+                            <input type="radio" name="user_mood" value="cloudy">
+                            <div class="path-content">
+                                <h3 class="path-title">The Cloudy Path</h3>
+                                <p class="path-description">calm, indifferent, pensive</p>
+                            </div>
+                        </label>
+            
+                        <label class="path-card rise-up">
+                            <input type="radio" name="user_mood" value="restful">
+                            <div class="path-content">
+                                <h3 class="path-title">The Restful Path</h3>
+                                <p class="path-description">tired, quiet, relaxed</p>
+                            </div>
+                        </label>
+            
+                        <label class="path-card rise-up">
+                            <input type="radio" name="user_mood" value="stormy">
+                            <div class="path-content">
+                                <h3 class="path-title">The Stormy Path</h3>
+                                <p class="path-description">angry, restless, irritable</p>
+                            </div>
+                        </label>
+            
+                        <label class="path-card rise-up">
+                            <input type="radio" name="user_mood" value="mournful">
+                            <div class="path-content">
+                                <h3 class="path-title">The Mournful Path</h3>
+                                <p class="path-description">sad, heavy-hearted, longing</p>
+                            </div>
+                        </label>
+            
+                        <label class="path-card rise-up">
+                            <input type="radio" name="user_mood" value="foggy">
+                            <div class="path-content">
+                                <h3 class="path-title">The Foggy Path</h3>
+                                <p class="path-description">unwell, unsure, dazed</p>
+                            </div>
+                        </label>
+            
+                        <label class="path-card rise-up">
+                            <input type="radio" name="user_mood" value="shadowed">
+                            <div class="path-content">
+                                <h3 class="path-title">The Shadowed Path</h3>
+                                <p class="path-description">troubled, distressed, sorrowful</p>
+                            </div>
+                        </label>
+                    </div>
+            
+                    <div class="navigation-buttons">
+                        <button class="quest-btn" type="button"  onclick="previousScene('scene1', 'welcome')">
+                            <span class="text">Back</span>
+                        </button>
+                        <button class="quest-btn" type="button" onclick="nextScene('scene1', 'scene2')">
+                            <span class="text">Continue</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scene 2: The Mapkeeper's Inquiry -->
+<div class="scene hidden" id="scene2">
+
+    <div class="scene-content">
+        <div class="map-container"><img src="Map.gif" alt="Map"></div>
+
+        <h2 class="scene-title floating">The Mapkeeper's Inquiry</h2>
+        <p class="prompt">"The Mapkeeper appears! 'Tell me, Eaters, where are you right now, so I can guide you to nearby culinary treasures.'"</p>
+
+        <form>
+            <label for="user_location">Describe your surroundings briefly:</label>
+            <select id="user_location" name="user_location">
+                <option value="At home">At home</option>
+                <option value="At work or school">At work or school</option>
+                <option value="On vacation or traveling">On vacation or traveling</option>
+                <option value="In the city centre">In the city centre</option>
+                <option value="Away from the city centre">Away from the city centre</option>
+                <option value="At a park or outdoor area">At a park or outdoor area</option>
+            </select>
+
+            <input type="hidden" id="user_location_hidden" name="user_location_hidden">
+
+            <div class="navigation-buttons">
+                <button class="quest-btn" type="button" onclick="previousScene('scene2', 'scene1')">
+                    <span class="text">Back</span>
+                </button>
+                <button class="quest-btn" type="button"  onclick="nextScene('scene2', 'scene3')">
+                    <span class="text">Continue</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Scene 3: The Elementalist's Challenge -->
+<div class="scene-three hidden" id="scene3">
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="flower.mp4" type="video/mp4">
+    </video>
+    <div class="scene-content">
+        <h2 class="scene-title floating">The Elementalist's Challenge</h2>
+        <p class="prompt">"The Elementalist steps forward. 'Before you continue, tell me: which element surrounds you today?'"</p>
+        
+        <div class="element-options">
+            <label class="element-card glide-in">
+                <input type="radio" name="weather_element" value="fire">
+                <div class="element-content">
+                    <span class="element-emoji">🔥</span>
+                    <h3 class="element-title">Bright, Warm, S</h3>
+                </div>
+            </label>
+
+            <label class="element-card glide-in">
+                <input type="radio" name="weather_element" value="water">
+                <div class="element-content">
+                    <span class="element-emoji">💧</span>
+                    <h3 class="element-title">cool, rainy, serene</h3>
+                </div>
+            </label>
+
+            <label class="element-card glide-in">
+                <input type="radio" name="weather_element" value="air">
+                <div class="element-content">
+                    <span class="element-emoji">🌪️</span>
+                    <h3 class="element-title">breezy, cloudy, dynamic</h3>
+                </div>
+            </label>
+
+            <label class="element-card glide-in">
+                <input type="radio" name="weather_element" value="earth">
+                <div class="element-content">
+                    <span class="element-emoji">🌱</span>
+                    <h3 class="element-title">still, grounded, calm</h3>
+                </div>
+            </label>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="quest-btn" type="button" onclick="previousScene('scene3', 'scene2')">
+                <span class="text">Back</span>
+            </button>
+            <button class="quest-btn" type="button" onclick="nextScene('scene3', 'scene4')">
+                <span class="text">Continue</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="scene-four hidden" id="scene4">
+
+    <div class="scene-content">
+        <h2 class="scene-title floating">The Collector's Vault</h2>
+        <p class="prompt">"The Collector invites you to open their vault. 'Tell me, what treasures (foods) have you discovered recently?'"</p>
+        
+        <div class="vault-options">
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="nasi_lemak">
+                <div class="vault-content">
+                    <h3 class="vault-title">Nasi Lemak</h3>
+                    <p class="vault-description">Coconut rice with sambal</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="char_kway_teow">
+                <div class="vault-content">
+                    <h3 class="vault-title">Char Kway Teow</h3>
+                    <p class="vault-description">Stir-fried rice noodles</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="chicken_rice">
+                <div class="vault-content">
+                    <h3 class="vault-title">Hainanese Chicken Rice</h3>
+                    <p class="vault-description">Fragrant rice with poached chicken</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="nasi_goreng">
+                <div class="vault-content">
+                    <h3 class="vault-title">Nasi Goreng Kampung</h3>
+                    <p class="vault-description">Traditional fried rice</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="laksa">
+                <div class="vault-content">
+                    <h3 class="vault-title">Laksa</h3>
+                    <p class="vault-description">Spicy noodle soup</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="mee_goreng">
+                <div class="vault-content">
+                    <h3 class="vault-title">Mee Goreng Mamak</h3>
+                    <p class="vault-description">Stir-fried Indian-style noodles</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="rendang">
+                <div class="vault-content">
+                    <h3 class="vault-title">Rendang</h3>
+                    <p class="vault-description">Slow-cooked spiced meat</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="satay">
+                <div class="vault-content">
+                    <h3 class="vault-title">Satay</h3>
+                    <p class="vault-description">Grilled meat skewers</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="roti_canai">
+                <div class="vault-content">
+                    <h3 class="vault-title">Roti Canai</h3>
+                    <p class="vault-description">Flaky flatbread</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="roti_john">
+                <div class="vault-content">
+                    <h3 class="vault-title">Roti John</h3>
+                    <p class="vault-description">Omelette sandwich</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="ayam_percik">
+                <div class="vault-content">
+                    <h3 class="vault-title">Ayam Percik</h3>
+                    <p class="vault-description">Grilled spiced chicken</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" id="other-checkbox" name="user_collection" value="other">
+                <div class="vault-content">
+                    <h3 class="vault-title">Other Treasures</h3>
+                    <p class="vault-description">Share your discoveries</p>
+                </div>
+            </label>
+            
+            <div id="modal-overlay" class="modal-overlay">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Share Your Food Discoveries</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="modal-input" name="other_food_1" placeholder="First food discovery...">
+                        <input type="text" class="modal-input" name="other_food_2" placeholder="Second food discovery...">
+                        <input type="text" class="modal-input" name="other_food_3" placeholder="Third food discovery...">
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="button" id="modal-cancel" class="modal-btn modal-btn-cancel">Cancel</button>
+                        <button type="button" id="modal-save" class="modal-btn modal-btn-save">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="navigation-buttons">
+            <button class="quest-btn" type="button" onclick="previousScene('scene4', 'scene3')">
+                <span class="text">Back</span>
+            </button>
+            <button class="quest-btn" type="button" onclick="nextScene('scene4', 'scene5')">
+                <span class="text">Continue</span>
+            </button>
+        </div>
+        
+    </div>
+
+    
+</div>
+
+<div class="scene-four hidden" id="scene5">
+
+    <div class="scene-content">
+        <h2 class="scene-title floating">The Oracle's Vision</h2>
+        <p class="prompt">"The Oracle gazes into the mist. 'I see glimpses of your thoughts. What foods have you been searching for in your journey over the past few days?'"</p>
+        
+        <div class="vault-options">
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="nasi_lemak">
+                <div class="vault-content">
+                    <h3 class="vault-title">Nasi Lemak</h3>
+                    <p class="vault-description">Coconut rice with sambal</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="char_kway_teow">
+                <div class="vault-content">
+                    <h3 class="vault-title">Char Kway Teow</h3>
+                    <p class="vault-description">Stir-fried rice noodles</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="chicken_rice">
+                <div class="vault-content">
+                    <h3 class="vault-title">Hainanese Chicken Rice</h3>
+                    <p class="vault-description">Fragrant rice with poached chicken</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="nasi_goreng">
+                <div class="vault-content">
+                    <h3 class="vault-title">Nasi Goreng Kampung</h3>
+                    <p class="vault-description">Traditional fried rice</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="laksa">
+                <div class="vault-content">
+                    <h3 class="vault-title">Laksa</h3>
+                    <p class="vault-description">Spicy noodle soup</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="mee_goreng">
+                <div class="vault-content">
+                    <h3 class="vault-title">Mee Goreng Mamak</h3>
+                    <p class="vault-description">Stir-fried Indian-style noodles</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="rendang">
+                <div class="vault-content">
+                    <h3 class="vault-title">Rendang</h3>
+                    <p class="vault-description">Slow-cooked spiced meat</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="satay">
+                <div class="vault-content">
+                    <h3 class="vault-title">Satay</h3>
+                    <p class="vault-description">Grilled meat skewers</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="roti_canai">
+                <div class="vault-content">
+                    <h3 class="vault-title">Roti Canai</h3>
+                    <p class="vault-description">Flaky flatbread</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="roti_john">
+                <div class="vault-content">
+                    <h3 class="vault-title">Roti John</h3>
+                    <p class="vault-description">Omelette sandwich</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="user_collection" value="ayam_percik">
+                <div class="vault-content">
+                    <h3 class="vault-title">Ayam Percik</h3>
+                    <p class="vault-description">Grilled spiced chicken</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" id="other-search-checkbox" name="user_collection" value="other">
+                <div class="vault-content">
+                    <h3 class="vault-title">Other Treasures</h3>
+                    <p class="vault-description">Share your discoveries</p>
+                </div>
+            </label>
+            
+            <div id="modal-overlay-scene5" class="modal-overlay">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Share Your Recent Food Searches</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="modal-input" name="other_search_1" placeholder="First food search...">
+                        <input type="text" class="modal-input" name="other_search_2" placeholder="Second food search...">
+                        <input type="text" class="modal-input" name="other_search_3" placeholder="Third food search...">
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="button" id="modal-cancel-scene5" class="modal-btn modal-btn-cancel">Cancel</button>
+                        <button type="button" id="modal-save-scene5" class="modal-btn modal-btn-save">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="navigation-buttons">
+            <button class="quest-btn" type="button" onclick="previousScene('scene5', 'scene4')">
+                <span class="text">Back</span>
+            </button>
+            <button class="quest-btn" type="button" onclick="nextScene('scene5', 'scene6')">
+                <span class="text">Continue</span>
+            </button>
+        </div>
+        
+    </div>
+
+    
+</div>
+
+<div class="scene-four hidden" id="scene6">
+
+    <div class="scene-content">
+        <h2 class="scene-title floating">The Portal of Decision</h2>
+        <p class="prompt">"You've reached the Portal of Decision! The Guardian of Choice asks, 'From all the possibilities, what would you like to eat right now?'"</p>
+        
+        <div class="vault-options">
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="sushi">
+                <div class="vault-content">
+                    <h3 class="vault-title">Sushi</h3>
+                    <p class="vault-description">Japanese rice rolls</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="sashimi">
+                <div class="vault-content">
+                    <h3 class="vault-title">Sashimi</h3>
+                    <p class="vault-description">Fresh raw fish slices</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="korean_bbq">
+                <div class="vault-content">
+                    <h3 class="vault-title">Korean BBQ</h3>
+                    <p class="vault-description">Grilled Korean meats</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="kimchi_jjigae">
+                <div class="vault-content">
+                    <h3 class="vault-title">Kimchi Jjigae</h3>
+                    <p class="vault-description">Korean kimchi stew</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="tom_yum">
+                <div class="vault-content">
+                    <h3 class="vault-title">Tom Yum Soup</h3>
+                    <p class="vault-description">Spicy Thai soup</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="pad_thai">
+                <div class="vault-content">
+                    <h3 class="vault-title">Pad Thai</h3>
+                    <p class="vault-description">Thai stir-fried noodles</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="pho">
+                <div class="vault-content">
+                    <h3 class="vault-title">Pho</h3>
+                    <p class="vault-description">Vietnamese noodle soup</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="hotpot">
+                <div class="vault-content">
+                    <h3 class="vault-title">Chinese Hotpot</h3>
+                    <p class="vault-description">Communal soup cooking</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="dim_sum">
+                <div class="vault-content">
+                    <h3 class="vault-title">Dim Sum</h3>
+                    <p class="vault-description">Chinese bite-sized dishes</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="bibimbap">
+                <div class="vault-content">
+                    <h3 class="vault-title">Bibimbap</h3>
+                    <p class="vault-description">Korean mixed rice bowl</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="pizza">
+                <div class="vault-content">
+                    <h3 class="vault-title">Pizza</h3>
+                    <p class="vault-description">Italian flatbread dish</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="burger">
+                <div class="vault-content">
+                    <h3 class="vault-title">Burger</h3>
+                    <p class="vault-description">Classic sandwich</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="steak">
+                <div class="vault-content">
+                    <h3 class="vault-title">Steak</h3>
+                    <p class="vault-description">Grilled beef cut</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="pasta">
+                <div class="vault-content">
+                    <h3 class="vault-title">Pasta</h3>
+                    <p class="vault-description">Italian noodle dishes</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="grilled_chicken">
+                <div class="vault-content">
+                    <h3 class="vault-title">Grilled Chicken</h3>
+                    <p class="vault-description">Flame-cooked poultry</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="final_food_decision" value="fish_and_chips">
+                <div class="vault-content">
+                    <h3 class="vault-title">Fish & Chips</h3>
+                    <p class="vault-description">British fried fish dish</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" id="other-decision-checkbox" name="final_food_decision" value="other">
+                <div class="vault-content">
+                    <h3 class="vault-title">Other Choice</h3>
+                    <p class="vault-description">Share your craving</p>
+                </div>
+            </label>
+            
+            <div id="modal-overlay-scene6" class="modal-overlay">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Share Your Food Choice</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="modal-input" name="other_decision" placeholder="What would you like to eat?">
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="button" id="modal-cancel-scene6" class="modal-btn modal-btn-cancel">Cancel</button>
+                        <button type="button" id="modal-save-scene6" class="modal-btn modal-btn-save">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="quest-btn" type="button" onclick="previousScene('scene6', 'scene5')">
+                <span class="text">Back</span>
+            </button>
+            <button class="quest-btn" type="button" onclick="nextScene('scene6', 'scene7')">
+                <span class="text">Continue</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="scene-four hidden" id="scene7">
+
+    <div class="scene-content">
+        <h2 class="scene-title floating">The Archivist's Archive</h2>
+        <p class="prompt">"The Archivist appears. 'I must record your chosen dish for the annals of history. Tell me, which culinary tradition does it belong to?'"</p>
+        
+        <div class="vault-options">
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="malaysian">
+                <div class="vault-content">
+                    <h3 class="vault-title">Malaysian</h3>
+                    <p class="vault-description">Traditional Malaysian cuisine</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="chinese">
+                <div class="vault-content">
+                    <h3 class="vault-title">Chinese</h3>
+                    <p class="vault-description">Chinese culinary traditions</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="indian">
+                <div class="vault-content">
+                    <h3 class="vault-title">Indian</h3>
+                    <p class="vault-description">Indian gastronomy</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="thai">
+                <div class="vault-content">
+                    <h3 class="vault-title">Thai</h3>
+                    <p class="vault-description">Thai food culture</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="japanese">
+                <div class="vault-content">
+                    <h3 class="vault-title">Japanese</h3>
+                    <p class="vault-description">Japanese cuisine</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="korean">
+                <div class="vault-content">
+                    <h3 class="vault-title">Korean</h3>
+                    <p class="vault-description">Korean food traditions</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="middle_eastern">
+                <div class="vault-content">
+                    <h3 class="vault-title">Middle Eastern</h3>
+                    <p class="vault-description">Middle Eastern flavors</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="western">
+                <div class="vault-content">
+                    <h3 class="vault-title">Western</h3>
+                    <p class="vault-description">American & European cuisine</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="italian">
+                <div class="vault-content">
+                    <h3 class="vault-title">Italian</h3>
+                    <p class="vault-description">Italian gastronomy</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="mexican">
+                <div class="vault-content">
+                    <h3 class="vault-title">Mexican</h3>
+                    <p class="vault-description">Mexican food culture</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="vietnamese">
+                <div class="vault-content">
+                    <h3 class="vault-title">Vietnamese</h3>
+                    <p class="vault-description">Vietnamese cuisine</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="indonesian">
+                <div class="vault-content">
+                    <h3 class="vault-title">Indonesian</h3>
+                    <p class="vault-description">Indonesian dishes</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="fine_dining">
+                <div class="vault-content">
+                    <h3 class="vault-title">Fine Dining</h3>
+                    <p class="vault-description">Upscale restaurants</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="casual_dining">
+                <div class="vault-content">
+                    <h3 class="vault-title">Casual Dining</h3>
+                    <p class="vault-description">Relaxed atmosphere</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="street_food">
+                <div class="vault-content">
+                    <h3 class="vault-title">Street Food</h3>
+                    <p class="vault-description">Roadside delicacies</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="hawker_stall">
+                <div class="vault-content">
+                    <h3 class="vault-title">Hawker Stall</h3>
+                    <p class="vault-description">Local food centers</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" name="food_categories" value="buffet">
+                <div class="vault-content">
+                    <h3 class="vault-title">Buffet</h3>
+                    <p class="vault-description">All-you-can-eat style</p>
+                </div>
+            </label>
+
+            <label class="vault-card rise-up">
+                <input type="checkbox" id="other-category-checkbox" name="food_categories" value="other">
+                <div class="vault-content">
+                    <h3 class="vault-title">Other Category</h3>
+                    <p class="vault-description">Define your category</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- Modal for Scene 7 -->
+        <div id="modal-overlay-scene7" class="modal-overlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">Define Your Food Category</h3>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="modal-input" name="other_category" placeholder="Enter food category...">
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="modal-cancel-scene7" class="modal-btn modal-btn-cancel">Cancel</button>
+                    <button type="button" id="modal-save-scene7" class="modal-btn modal-btn-save">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="quest-btn" type="button" onclick="previousScene('scene7', 'scene6')">
+                <span class="text">Back</span>
+            </button>
+            <button class="quest-btn" type="button" onclick="nextScene('scene7', 'scene8')">
+                <span class="text">Continue</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="scene-four hidden" id="scene8">
+
+    <div class="scene-content">
+        <h2 class="scene-title floating">The Chamber of Priorities</h2>
+        <p class="prompt">"At the end of your journey,'What matters most to you when deciding on a meal? Rank these factors to guide future adventures!'"</p>
+        
+        <div class="ranking-container">
+            <div class="ranking-item rise-up">
+                <label>How you're feeling</label>
+                <div class="ranking-bar-container">
+                    <input type="range" min="1" max="5" value="3" class="ranking-slider" name="feeling_rank">
+                    <div class="ranking-value"></div>
+                </div>
+            </div>
+
+            <div class="ranking-item rise-up">
+                <label>Where you are</label>
+                <div class="ranking-bar-container">
+                    <input type="range" min="1" max="5" value="3" class="ranking-slider" name="location_rank">
+                    <div class="ranking-value"></div>
+                </div>
+            </div>
+
+            <div class="ranking-item rise-up">
+                <label>The weather around you</label>
+                <div class="ranking-bar-container">
+                    <input type="range" min="1" max="5" value="3" class="ranking-slider" name="weather_rank">
+                    <div class="ranking-value"></div>
+                </div>
+            </div>
+
+            <div class="ranking-item rise-up">
+                <label>Foods you've recently saved</label>
+                <div class="ranking-bar-container">
+                    <input type="range" min="1" max="5" value="3" class="ranking-slider" name="saved_food_rank">
+                    <div class="ranking-value"></div>
+                </div>
+            </div>
+
+            <div class="ranking-item rise-up">
+                <label>Foods you've searched for recently</label>
+                <div class="ranking-bar-container">
+                    <input type="range" min="1" max="5" value="3" class="ranking-slider" name="searched_food_rank">
+                    <div class="ranking-value"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-buttons">
+            <button class="quest-btn" type="button" onclick="previousScene('scene8', 'scene7')">
+                <span class="text">Back</span>
+            </button>
+            <button class="quest-btn" type="button" onclick="nextScene('scene8', 'final')">
+                <span class="text">Submit</span>
+            </button>
+        </div>
+    </div>
+</div>
+            <!-- Final Scene -->
+            <div class="scene hidden" id="final">
+                <h2 class="floating">Quest Complete!</h2>
+                <p>Thank you for sharing your food journey!</p>
+                <a href="https://www.facebook.com/share/g/1H9RuPRDqo/" target="_blank" class="submit-btn bounce">
+                    <i class="fab fa-facebook"></i>
+                    Join the Eaters Community
+                </a>
+                            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
