@@ -81,11 +81,12 @@
 }
 
 .logo {
-    max-width: 300px;
+    max-width: 200px;
     height: auto;
     margin: auto;
     display: block;
 }
+
 
 
 
@@ -326,7 +327,8 @@ h2 {
 
 /* Form Elements */
 select,
-input[type="text"] {
+input[type="text"] ,
+input[type="email"] {
     width: 100%;
     padding: 12px;
     border: 2px solid #ddd;

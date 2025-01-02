@@ -2,7 +2,6 @@
 .scene-title {
     font-family: 'Comfortaa', sans-serif;
     font-size: 1.8rem;
-    margin-bottom: 0.5rem;
     color: var(--primary-color);
     text-align: center;
 }
@@ -22,15 +21,8 @@
     align-items: center;
 }
 
-.welcome-input {
-    width: calc(100% - 40px);
-    padding: 12px;
-    margin: 8px 0;
-    border: 2px solid #f26f27;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
+
+
 
 @media (max-width: 768px) {
     .user-info {
@@ -39,7 +31,6 @@
 
     .welcome-input {
         width: calc(100% - 30px);
-        padding: 10px;
         font-size: 14px;
     }
 }
@@ -52,7 +43,7 @@
 
 
 .problem-statement {
-    
+    margin-top:0px;
     text-align: center;
 }
 
@@ -715,7 +706,7 @@
     padding: 1rem;
     max-width: 600px;
     margin: 20px auto;
-    height: 45vh;
+    height: 38vh;
     overflow-y: auto;
 }
 
