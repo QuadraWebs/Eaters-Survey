@@ -74,7 +74,7 @@
     /* Change to 2 columns */
     gap: 3px;
     margin: 0.5rem 0;
-    max-height: 45vh;
+    max-height:35vh;
     overflow-y: auto;
 }
 
@@ -182,7 +182,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
     margin: 0.5rem 0;
-    max-height: 50vh;
+    max-height:35vh;
 }
 
 .element-card {
@@ -266,7 +266,7 @@
 @media (max-width: 768px) {
     .element-options {
         grid-template-columns: 1fr;
-        max-height: 50vh;
+        max-height: 35vh;
         gap: 0.6rem;
     }
 
@@ -303,7 +303,7 @@
     .path-options {
         grid-template-columns: 1fr;
         /* Single column on mobile */
-        max-height: 45vh;
+        max-height:35vh;
         gap: 0.6rem;
     }
 
@@ -472,7 +472,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
     margin: 0.5rem 0;
-    max-height: 45vh;
+    max-height:35vh;
     overflow-y: auto;
     padding-right: 10px;
 }
@@ -585,7 +585,7 @@
 @media (max-width: 768px) {
     .vault-options {
         grid-template-columns: 1fr;
-        max-height: 45vh;
+        max-height:35vh;
         gap: 0.6rem;
     }
 
@@ -706,7 +706,7 @@
     padding: 1rem;
     max-width: 600px;
     margin: 20px auto;
-    height: 38vh;
+    height:35vh;
     overflow-y: auto;
 }
 
