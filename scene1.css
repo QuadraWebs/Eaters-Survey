@@ -1,11 +1,55 @@
 /* Header Elements */
 .scene-title {
-    font-family: 'Etna', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
     text-align: center;
 }
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.user-info {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-input {
+    width: calc(100% - 40px);
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #f26f27;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .user-info {
+        max-width: 90%;
+    }
+
+    .welcome-input {
+        width: calc(100% - 30px);
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+.welcome-input::placeholder {
+    color: #999;
+}
+
+
 
 .problem-statement {
     
@@ -69,7 +113,6 @@
 }
 
 
-
 /* Card Styling */
 .path-card {
     background: white;
@@ -101,7 +144,7 @@
 }
 
 .path-title {
-    font-family: 'Etna', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-size: 0.9rem;
     margin: 0;
     text-align: center;
@@ -177,7 +220,7 @@
 }
 
 .element-title {
-    font-family: 'Etna', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-size: 0.9rem;
     margin: 0;
     text-align: center;
@@ -490,7 +533,7 @@
 }
 
 .vault-title {
-    font-family: 'Etna', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-size: 0.9rem;
     margin: 0;
     text-align: center;
@@ -601,7 +644,7 @@
 }
 
 .modal-title {
-    font-family: 'Etna', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     color: var(--primary-color);
     font-size: 1.4rem;
     text-align: center;
@@ -973,5 +1016,38 @@
     color: #666;
     margin-bottom: 2rem;
 }
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.confetti-left, .confetti-right {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    max-width: 50%; /* Larger width for better visibility */
+}
+
+.confetti-left {
+    left: 0;
+}
+
+.confetti-right {
+    right: 0;
+}
+
+/* Mobile view - make confetti more prominent */
+@media screen and (max-width: 768px) {
+    .confetti-left, .confetti-right {
+        max-width: 100%; /* Increased size for mobile */
+    }
+}
+
+
 
  

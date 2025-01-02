@@ -8,13 +8,24 @@
 }
 
 /* Add these new styles */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
 
+
+.light-text {
+    font-weight: 300;
+}
+
+.regular-text {
+    font-weight: 400;
+}
+
+.bold-text {
+    font-weight: 700;
+}
 
 .problem-statement {
     margin: 1rem 0;
     /* Reduced from 2rem */
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 .problem-statement h2 {
@@ -128,7 +139,7 @@
 }
 
 body {
-    font-family: 'Biski', Arial, sans-serif;
+    font-family: 'Comfortaa', Arial, sans-serif;
     background: var(--background-color);
     color: var(--text-color);
     margin: 0;
@@ -144,7 +155,7 @@ h2,
 h3,
 .prompt,
 .path-content h3 {
-    font-family: 'Etna', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 
@@ -197,7 +208,7 @@ h2 {
 .quest-btn {
     /* Base styles */
    
-    font-family: 'Etna', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     font-weight: 600;
     font-size: 18px;
     padding: 1.5em 2.5em;
@@ -328,22 +339,13 @@ input[type="text"] {
     border-color: var(--primary-color);
 }
 
-@font-face {
-    font-family: 'Etna';
-    src: url('etna-free-font.otf') format('opentype');
-}
-
-.etna-font {
-    font-family: 'Etna', sans-serif;
-}
-
 h1,
 h2,
 h3,
 .prompt,
 .path-content h3,
 .encouragement {
-    font-family: 'Etna', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
 }
 
 
@@ -360,7 +362,3 @@ h3,
 }
 
 
-@font-face {
-    font-family: 'Biski';
-    src: url('BiskiTrial-Regular.otf') format('opentype');
-}
