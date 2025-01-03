@@ -182,7 +182,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 0.8rem;
     margin: 0.5rem 0;
-    max-height:200px;
+    max-height:300px;
     overflow-y: auto;
 }
 
@@ -299,6 +299,7 @@
 
     .scene-content {
         padding: 0.8rem;
+        margin-top:80px;
     }
 
     .path-options {
@@ -850,9 +851,6 @@
 #scene3 .scene-content {
     position: relative;
     z-index: 1;
-    border-radius: 15px;
-    padding: 20px;
-    margin: auto;
     width: 90%;
     max-width: 500px;
 }
