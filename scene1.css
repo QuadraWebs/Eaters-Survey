@@ -975,6 +975,7 @@
     font-weight: 600;
     transition: all 0.3s ease;
     text-decoration: none;
+    margin-top:5px;
 }
 
 .submit-btn:hover {
