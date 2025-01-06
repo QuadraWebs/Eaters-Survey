@@ -6,12 +6,30 @@
     <title>Eaters Survey</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="scene1.css" />
-    <link rel="icon" type="image/svg+xml" href="eaters-fav.svg">
-    
-    <!-- Add these new meta tags -->
-    <link rel="apple-touch-icon" href="eaters-fav.svg">
-    <meta property="og:image" content="eaters-fav.svg">
-    <meta name="twitter:image" content="eaters-fav.svg">
+    <!-- Favicon with specific size -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="eaters-fav.svg"
+      sizes="512x512"
+    />
+
+    <!-- Apple Touch Icon with size -->
+    <link rel="apple-touch-icon" href="eaters-fav.svg" sizes="180x180" />
+
+    <!-- Open Graph and Twitter Images with dimensions -->
+    <meta property="og:image" content="eaters-fav.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/svg+xml" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="eaters-fav.svg" />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="630" />
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+    <meta name="robots" content="noindex, nofollow" />
   </head>
   <body>
     <div class="container" style="margin-top: 0; padding: 0">
@@ -25,9 +43,19 @@
             />
 
             <div class="user-info">
-                <input type="text" name="name" placeholder="Enter your name"  class="welcome-input" />
-                <input type="email" name="email" placeholder="Enter your email" class="welcome-input" />
-              </div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                class="welcome-input"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                class="welcome-input"
+              />
+            </div>
 
             <!-- Add this new section -->
             <div class="problem-statement">
@@ -523,11 +551,7 @@
 
             <div class="vault-options">
               <label class="vault-card rise-up">
-                <input
-                  type="checkbox"
-                  name="food_search"
-                  value="nasi_lemak"
-                />
+                <input type="checkbox" name="food_search" value="nasi_lemak" />
                 <div class="vault-content">
                   <h3 class="vault-title">Nasi Lemak</h3>
                   <p class="vault-description">Coconut rice with sambal</p>
@@ -561,11 +585,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="checkbox"
-                  name="food_search"
-                  value="nasi_goreng"
-                />
+                <input type="checkbox" name="food_search" value="nasi_goreng" />
                 <div class="vault-content">
                   <h3 class="vault-title">Nasi Goreng Kampung</h3>
                   <p class="vault-description">Traditional fried rice</p>
@@ -581,11 +601,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="checkbox"
-                  name="food_search"
-                  value="mee_goreng"
-                />
+                <input type="checkbox" name="food_search" value="mee_goreng" />
                 <div class="vault-content">
                   <h3 class="vault-title">Mee Goreng Mamak</h3>
                   <p class="vault-description">
@@ -611,11 +627,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="checkbox"
-                  name="food_search"
-                  value="roti_canai"
-                />
+                <input type="checkbox" name="food_search" value="roti_canai" />
                 <div class="vault-content">
                   <h3 class="vault-title">Roti Canai</h3>
                   <p class="vault-description">Flaky flatbread</p>
@@ -623,11 +635,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="checkbox"
-                  name="food_search"
-                  value="roti_john"
-                />
+                <input type="checkbox" name="food_search" value="roti_john" />
                 <div class="vault-content">
                   <h3 class="vault-title">Roti John</h3>
                   <p class="vault-description">Omelette sandwich</p>
@@ -635,11 +643,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="checkbox"
-                  name="food_search"
-                  value="ayam_percik"
-                />
+                <input type="checkbox" name="food_search" value="ayam_percik" />
                 <div class="vault-content">
                   <h3 class="vault-title">Ayam Percik</h3>
                   <p class="vault-description">Grilled spiced chicken</p>
@@ -748,11 +752,7 @@
 
             <div class="vault-options">
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="final_food_decision"
-                  value="sushi"
-                />
+                <input type="radio" name="final_food_decision" value="sushi" />
                 <div class="vault-content">
                   <h3 class="vault-title">Sushi</h3>
                   <p class="vault-description">Japanese rice rolls</p>
@@ -828,11 +828,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="final_food_decision"
-                  value="hotpot"
-                />
+                <input type="radio" name="final_food_decision" value="hotpot" />
                 <div class="vault-content">
                   <h3 class="vault-title">Chinese Hotpot</h3>
                   <p class="vault-description">Communal soup cooking</p>
@@ -864,11 +860,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="final_food_decision"
-                  value="pizza"
-                />
+                <input type="radio" name="final_food_decision" value="pizza" />
                 <div class="vault-content">
                   <h3 class="vault-title">Pizza</h3>
                   <p class="vault-description">Italian flatbread dish</p>
@@ -876,11 +868,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="final_food_decision"
-                  value="burger"
-                />
+                <input type="radio" name="final_food_decision" value="burger" />
                 <div class="vault-content">
                   <h3 class="vault-title">Burger</h3>
                   <p class="vault-description">Classic sandwich</p>
@@ -888,11 +876,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="final_food_decision"
-                  value="steak"
-                />
+                <input type="radio" name="final_food_decision" value="steak" />
                 <div class="vault-content">
                   <h3 class="vault-title">Steak</h3>
                   <p class="vault-description">Grilled beef cut</p>
@@ -900,11 +884,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="final_food_decision"
-                  value="pasta"
-                />
+                <input type="radio" name="final_food_decision" value="pasta" />
                 <div class="vault-content">
                   <h3 class="vault-title">Pasta</h3>
                   <p class="vault-description">Italian noodle dishes</p>
@@ -1025,11 +1005,7 @@
 
             <div class="vault-options">
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="food_categories"
-                  value="malaysian"
-                />
+                <input type="radio" name="food_categories" value="malaysian" />
                 <div class="vault-content">
                   <h3 class="vault-title">Malaysian</h3>
                   <p class="vault-description">Traditional Malaysian cuisine</p>
@@ -1061,11 +1037,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="food_categories"
-                  value="japanese"
-                />
+                <input type="radio" name="food_categories" value="japanese" />
                 <div class="vault-content">
                   <h3 class="vault-title">Japanese</h3>
                   <p class="vault-description">Japanese cuisine</p>
@@ -1117,11 +1089,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="food_categories"
-                  value="vietnamese"
-                />
+                <input type="radio" name="food_categories" value="vietnamese" />
                 <div class="vault-content">
                   <h3 class="vault-title">Vietnamese</h3>
                   <p class="vault-description">Vietnamese cuisine</p>
@@ -1129,11 +1097,7 @@
               </label>
 
               <label class="vault-card rise-up">
-                <input
-                  type="radio"
-                  name="food_categories"
-                  value="indonesian"
-                />
+                <input type="radio" name="food_categories" value="indonesian" />
                 <div class="vault-content">
                   <h3 class="vault-title">Indonesian</h3>
                   <p class="vault-description">Indonesian dishes</p>
@@ -1403,10 +1367,10 @@
         </div>
         <!-- Final Scene -->
         <div class="scene hidden" id="final">
-            <div class="confetti-container">
-                <!-- <img src="left.gif" alt="Confetti Left" class="confetti-left"> -->
-                <img src="right.gif" alt="Confetti Right" class="confetti-right">
-            </div>
+          <div class="confetti-container">
+            <!-- <img src="left.gif" alt="Confetti Left" class="confetti-left"> -->
+            <img src="right.gif" alt="Confetti Right" class="confetti-right" />
+          </div>
           <h2 class="floating">Quest Complete!</h2>
           <p>Thank you for sharing your food journey!</p>
           <p>Join our Facebook community to share your culinary adventures!</p>
@@ -1414,24 +1378,29 @@
             href="https://www.facebook.com/share/g/1H9RuPRDqo/"
             target="_blank"
             class="submit-btn bounce"
-            style="margin-top:5px"
+            style="margin-top: 5px"
           >
             <i class="fab fa-facebook"></i>
-            Join the Eaters Community <br>(Non-halal content)
+            Join the Eaters Community <br />(Non-halal content)
           </a>
           <a
             href="https://www.facebook.com/share/g/1CsyLWV6Cu/"
             target="_blank"
             class="submit-btn bounce"
-            style="margin-top:5px"
-
+            style="margin-top: 5px"
           >
             <i class="fab fa-facebook"></i>
-            Join the Eaters Community <br> (Halal content)
+            Join the Eaters Community <br />
+            (Halal content)
           </a>
         </div>
       </form>
     </div>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+    </script>
   </body>
 </html>
